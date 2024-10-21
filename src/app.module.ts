@@ -4,6 +4,8 @@ import { Modelo } from './modelo/entities/modelo.entity';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
+import { AuthModule } from './auth/auth.module';
+import { ModeloModule } from './modelo/modelo.module';
 
 @Module({
   imports: [
@@ -21,6 +23,8 @@ import { AppController } from './app.controller';
       autoLoadEntities: true,
       entities: [Modelo],
     }),
+    AuthModule,
+    ModeloModule,
   ],
   controllers: [AppController],
   providers: [AppService],
