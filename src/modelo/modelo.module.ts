@@ -3,10 +3,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ModeloService } from './modelo.service';
 import { ModeloController } from './modelo.controller';
 import { Modelo } from './entities/modelo.entity';
-import { AuthModule } from 'src/auth/auth.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Modelo]),AuthModule],
+  imports: [TypeOrmModule.forFeature([Modelo])],
   providers: [ModeloService],
   controllers: [ModeloController],
   exports: [ModeloService,TypeOrmModule],
