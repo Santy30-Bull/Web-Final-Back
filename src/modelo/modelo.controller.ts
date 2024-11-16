@@ -1,7 +1,6 @@
-import { Controller, Get, Post, Body, Param, Put, Delete, UseGuards} from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Put, Delete, Patch} from '@nestjs/common';
 import { ModeloService } from './modelo.service';
 import { Modelo } from './entities/modelo.entity';
-import { AuthGuard } from '@nestjs/passport'; // Importa el guard de passport para JWT
 import { CreateModeloDto } from './dto/create-modelo.dto';
 
 
@@ -39,7 +38,11 @@ export class ModeloController {
   async remove(@Param('id') id: number): Promise<void> {
     return this.modeloService.remove(id);
   }
-  //tengo que preguntar; porque en el de sebas no son funciones async
-  
+
+  // Actualizar parcialmente un modelo
+  @Patch(':id')
+  async partialUpdate(@Param('id') id: number, @Body() partialUpdate: Partial<Modelo>): Promise<Modelo> {
+    return this.modeloService.partialUpdate(id, partialUpdate);
+  }
 }
 
