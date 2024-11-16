@@ -17,6 +17,5 @@ export class CreateFotoDto {
     precioImpresa: number;
 
     @IsNotEmpty()  // Este campo es obligatorio
-    @IsUrl()       // Valida que sea una URL válida
     url: string;   // Campo que representa la URL de la foto
 }

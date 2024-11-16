@@ -1,9 +1,8 @@
-import { Controller, Get, Post, Body, Param, Put, Delete, Patch} from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Put, Delete, Patch } from '@nestjs/common';
 import { ModeloService } from './modelo.service';
 import { Modelo } from './entities/modelo.entity';
 import { CreateModeloDto } from './dto/create-modelo.dto';
-
-
+import { UpdateModeloDto } from './dto/update-modelo.dto';  // Importar DTO para actualizaciones
 
 @Controller('modelos')
 export class ModeloController {
@@ -27,9 +26,9 @@ export class ModeloController {
     return this.modeloService.create(createModeloDto);
   }
 
-  // Actualizar un modelo por ID
+  // Actualizar un modelo por ID (actualización completa)
   @Put(':id')
-  async update(@Param('id') id: number, @Body() updateData: Partial<Modelo>): Promise<Modelo> {
+  async update(@Param('id') id: number, @Body() updateData: UpdateModeloDto): Promise<Modelo> {
     return this.modeloService.update(id, updateData);
   }
 
@@ -39,9 +38,9 @@ export class ModeloController {
     return this.modeloService.remove(id);
   }
 
-  // Actualizar parcialmente un modelo
+  // Actualizar parcialmente un modelo por ID (usado para asignar un evento, por ejemplo)
   @Patch(':id')
-  async partialUpdate(@Param('id') id: number, @Body() partialUpdate: Partial<Modelo>): Promise<Modelo> {
+  async partialUpdate(@Param('id') id: number, @Body() partialUpdate: UpdateModeloDto): Promise<Modelo> {
     return this.modeloService.partialUpdate(id, partialUpdate);
   }
 }
