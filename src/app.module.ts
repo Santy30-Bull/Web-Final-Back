@@ -5,6 +5,8 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { ModeloModule } from './modelo/modelo.module';
+import { ProductosModule } from './productos/productos.module';
+import { Producto } from './productos/entities/producto.entity';
 
 @Module({
   imports: [
@@ -20,9 +22,10 @@ import { ModeloModule } from './modelo/modelo.module';
       database: process.env.DB_DATABASE,
       synchronize: true,
       autoLoadEntities: true,
-      entities: [Modelo],
+      entities: [Modelo,Producto],
     }),
     ModeloModule,
+    ProductosModule,
   ],
   controllers: [AppController],
   providers: [AppService],

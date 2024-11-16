@@ -36,4 +36,10 @@ export class ModeloService {
   async remove(id: number): Promise<void> {
     await this.modeloRepository.delete(id);
   }
+
+  // Actualizar parcialmente un modelo
+  async partialUpdate(id: number, partialUpdate: Partial<Modelo>): Promise<Modelo> {
+    await this.modeloRepository.update(id, partialUpdate);
+    return this.findOne(id); // Devolver el modelo actualizado
+  }
 }
