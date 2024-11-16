@@ -8,6 +8,7 @@ import { ModeloModule } from './modelo/modelo.module';
 import { ProductosModule } from './productos/productos.module';
 import { Producto } from './productos/entities/producto.entity';
 import { FotosModule } from './fotos/fotos.module';
+import { EventosModule } from './eventos/eventos.module';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { FotosModule } from './fotos/fotos.module';
     ModeloModule,
     ProductosModule,
     FotosModule,
+    EventosModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -1,5 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne} from 'typeorm';
-
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
+import { Evento } from 'src/eventos/entities/evento.entity';
 
 @Entity()
 export class Modelo {
@@ -12,5 +12,8 @@ export class Modelo {
   @Column('text')
   descripcion: string;
 
-  // aqui irian las relaciones con las demas entidades, faltan varias relaciones
+  // Relación muchos a 1 con Evento (un modelo solo puede estar en un evento)
+  @ManyToOne(() => Evento, (evento) => evento.modelos)
+  @JoinColumn() // Esto indica que `Modelo` tiene la clave foránea de `Evento`
+  evento: Evento;
 }

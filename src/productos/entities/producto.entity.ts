@@ -1,29 +1,34 @@
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, ManyToMany, JoinTable } from 'typeorm';
+import { Evento } from 'src/eventos/entities/evento.entity';
 
 @Entity()
 export class Producto {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({ length: 100 }) // Limitamos el tamaño del nombre
+    @Column({ length: 100 })
     nombre: string;
 
     @Column('text')
     descripcion: string;
 
-    @Column('decimal', { precision: 10, scale: 2 }) // Definimos precisión para precios (por ejemplo, 99999999.99)
+    @Column('decimal', { precision: 10, scale: 2 })
     precio: number;
 
-    @Column('int') // Especificamos que es un entero
+    @Column('int')
     stock: number;
 
-    @Column({ default: true }) // Estado por defecto activo
+    @Column({ default: true })
     estado: boolean;
 
-    @CreateDateColumn() // Fecha automática al crear
+    @CreateDateColumn()
     fechaCreacion: Date;
 
-    @UpdateDateColumn() // Fecha automática al actualizar
+    @UpdateDateColumn()
     fechaActualizacion: Date;
-}
 
+    // Relación Muchos a Muchos con Evento
+    @ManyToMany(() => Evento)
+    @JoinTable() // Esto indica que se utilizará una tabla de unión para esta relación
+    eventos: Evento[];
+}
