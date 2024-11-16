@@ -7,6 +7,7 @@ import { AppController } from './app.controller';
 import { ModeloModule } from './modelo/modelo.module';
 import { ProductosModule } from './productos/productos.module';
 import { Producto } from './productos/entities/producto.entity';
+import { FotosModule } from './fotos/fotos.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { Producto } from './productos/entities/producto.entity';
     }),
     ModeloModule,
     ProductosModule,
+    FotosModule,
   ],
   controllers: [AppController],
   providers: [AppService],
