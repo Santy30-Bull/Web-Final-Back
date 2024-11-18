@@ -29,18 +29,18 @@ Una vez que hayas configurado el archivo `.env`, instala las dependencias del pr
 
 ```bash
 npm install
-
+```
 ## Ejecutar el Backend
 
 Una vez que las dependencias estén instaladas, puedes ejecutar el backend con el siguiente comando:
 
 ```bash
 npm run start:dev
-
+```
 ## Ejecutal el Frontend
 ```bash
 npm run dev
-
+```
 ## Contribuciones
 
 Si deseas contribuir al proyecto, puedes hacer un **fork** del repositorio y enviar tus pull requests con mejoras o correcciones. Asegúrate de seguir las convenciones de código y de probar las funcionalidades antes de enviar cualquier contribución.
