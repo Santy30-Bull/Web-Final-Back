@@ -17,7 +17,7 @@ import { EventosModule } from './eventos/eventos.module';
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.DATABASE_PUBLIC_URL,
+      host: process.env.DATABASE_URL,
       port: +process.env.PGPORT,
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
