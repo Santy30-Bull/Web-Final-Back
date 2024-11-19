@@ -41,6 +41,14 @@ npm run start:dev
 ```bash
 npm run dev
 ```
-## Contribuciones
+## Deploy
+El Deploy de la parte backend de este proyecto se hizo usando Railway (asi como el frontend). A diferencia de este; el deploy no se pudo completar al faltar una conexion con una base de datos:
 
-Si deseas contribuir al proyecto, puedes hacer un **fork** del repositorio y enviar tus pull requests con mejoras o correcciones. Asegúrate de seguir las convenciones de código y de probar las funcionalidades antes de enviar cualquier contribución.
+<img width="650" alt="{C6EABEF1-B5D8-4F4D-87C6-A2CF4712AA20}" src="https://github.com/user-attachments/assets/5a02a87d-7ae4-44ba-a8ec-eadbb9444acd">
+
+Se intentó conectar con varias bases de datos: 
+---creando una base de datos Postgres desde Railway é incluso se creó un servicio de RDS de AWS esperdando poder hacer la conexion, y aunque el servicio esta operativo/funcional, la conexion nunca se pudó dar. Obviamente el proyecto funciona si se clona el repo y usando una base de datos local
+
+<img width="713" alt="{AD2FC25B-3F4D-4A0B-80D2-8D8449D1D12A}" src="https://github.com/user-attachments/assets/035ae1dc-1fbf-4492-9a9d-31c321948095">
+
+
