@@ -17,11 +17,11 @@ Antes de comenzar, asegúrate de tener las siguientes herramientas instaladas en
    Debes crear un archivo `.env` en la raíz del proyecto para configurar las credenciales de la base de datos. El archivo debe contener las siguientes variables de entorno:
 
    ```env
-   DB_HOST=tu_host_de_base_de_datos
-   DB_PORT=puerto_de_base_de_datos
-   DB_USERNAME=tu_usuario_de_base_de_datos
-   DB_PASSWORD=tu_contraseña_de_base_de_datos
-   DB_DATABASE=nombre_de_tu_base_de_datos
+   DATABASE_URL=tu_host_de_base_de_datos
+   PGPORT=puerto_de_base_de_datos
+   POSTGRES_USER=tu_usuario_de_base_de_datos
+   POSTGRES_PASSWORD=tu_contraseña_de_base_de_datos
+   POSTGRES_DB=nombre_de_tu_base_de_datos
    
 ## Instalación de dependencias
 
